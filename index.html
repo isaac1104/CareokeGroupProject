@@ -7,17 +7,41 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Careoke</title>
   <!-- Compiled and minified CSS -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
   <!-- custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <button class="waves-effect waves-light btn">Delete Me</button>
+
+<div class="jumbotron">
+  <h1 class="display-3">Careoke</h1>
+  <p class="lead">Socially Conscious Music</p>
+  <hr class="my-4">
+    </div>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Song or Artist Name" id="first_name" type="text" class="validate">
+          <label for="Song_Artist_Name"></label>
+        </div>
+
+        <div>
+  <button class="waves-effect waves-light btn" id="search-button">Search</button>
+     <span> <img src ="images/logo.png" class="logo"></span>
+        </div>
 
 
 
-  <!-- Materialize -->
+
+
+
+  <!-- Scripts -->
+  <script
+        src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
   <script src="js/app.js"></script>
 </body>
