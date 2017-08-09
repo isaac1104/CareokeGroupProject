@@ -11,31 +11,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
   <!-- custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Sedgwick+Ave" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
 </head>
 <body>
 
 
 <div class="jumbotron">
-  <h1 class="display-3">Careoke</h1>
-  <p class="lead">Socially Conscious Music</p>
+  <h1 class="display-3">careoke</h1>
+  <h5><p class="lead">karaoke with a social conscience</p><h5>
   <hr class="my-4">
     </div>
 
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" id="search-form"></form>
       <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Song or Artist Name" id="first_name" type="text" class="validate">
-          <label for="Song_Artist_Name"></label>
+        <div class="input-field col s6" id="search-bar">
+          <input placeholder="Song or Artist Name" id="Song_name" type="text" class="validate">
+          <label for="Song_Artist_Name" id="song-label"></label>
         </div>
 
         <div>
   <button class="waves-effect waves-light btn" id="search-button">Search</button>
-     <span> <img src ="images/logo.png" class="logo"></span>
+        <span id="logo"> <img src ="images/logo.png"></span>
         </div>
-
-
-
+        
 
 
 
