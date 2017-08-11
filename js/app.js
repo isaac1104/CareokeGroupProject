@@ -35,15 +35,15 @@ var name = "system of a down";
 
 function errorMessage() {
   console.log("no artist found");
-};
+}
 
 function noInfo() {
   console.log("no info found");
-};
+}
 
 function postInfo() {
   console.log("paste the info on page2");
-};
+}
 
 function errorMsg() {
   console.log("artist id broke");
@@ -71,10 +71,10 @@ $.ajax ({
         // $(".testPaste").text(bioPaste);
       },
       error: errorMsg()
-    })
+    });
   },
   error: errorMessage()
-})
+});
 
 // <--- javascipt --->
 
@@ -82,6 +82,6 @@ $(document).ready(function() {
   $('#search-button').on('click', function() {
     name = $('#Song_name').val();
     console.log(name);
-    
+
   });
 });
