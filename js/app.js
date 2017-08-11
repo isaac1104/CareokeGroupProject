@@ -7,7 +7,7 @@ $(document).ready(function() {
       var apiKey = "AIzaSyDnvAQCVMikrY0doIuuPeM-FkI5Bbf8ROo";
       $("#search").val("");
       $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&type=video&q=" + keyword + "&key=" + apiKey,
+        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&type=video&videoSyndicated=true&q=" + keyword + "&key=" + apiKey,
         method: "GET"
       }).done(function(response) {
         console.log(response);
