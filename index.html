@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Careoke</title>
+  <title>m u s i c tionary</title>
   <!--Roboto Google font-->
   <link href=“https://fonts.googleapis.com/css?family=Roboto” rel=“stylesheet”>
   <!-- Insert Materialize later -->
@@ -16,8 +16,8 @@
 
 <div class="jumbotron">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-  <h1 class="display-3">musictionary</h1>
-  <h5><p class="lead">new mission statement here</p></h5>
+  <h1 class="title"><span id="music-font-only">music</span>tionary</h1>
+  <p class="">your source for <span id="music-font-only">note</span>-able artists</p>
     </div>
 
 <div class="wrap">
@@ -37,11 +37,66 @@
 <div class="artist-info-display">
 </div>
 
+<!--Scrolling Side Panels-->
+    <div class="Container">
+        <div class="Left"><div>
+                  <img class="mySlides" src="images/music1.jpg">
+                  <img class="mySlides" src="images/music2.jpg">
+                  <img class="mySlides" src="images/music3.jpg">
+                  <img class="mySlides" src="images/music4.jpg">
+                </div></div>
+        <div class="Middle"></div>
+        <div class="Right">
+              <div>
+                  <img class="mySlides1" src="images/music1.jpg">
+                  <img class="mySlides1" src="images/music2.jpg">
+                  <img class="mySlides1" src="images/music3.jpg">
+                  <img class="mySlides1" src="images/music4.jpg">
+                </div>
+            <div> Right Content</div>
+        </div>    
+    </div>
+    
+
+   
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+var myIndex = 0;
+carousel1();
+
+function carousel1() {
+    var i;
+    var x = document.getElementsByClassName("mySlides1");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel1, 2000); // Change image every 2 seconds
+}
+</script>
+
   <!-- Scripts -->
-  <script
-        src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
   <script type="text/javascript" src="http://developer.openaura.com/oa-all.min.js"></script>
   <script src="js/app.js"></script>
+  
 </body>
 </html>
