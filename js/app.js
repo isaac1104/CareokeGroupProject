@@ -75,3 +75,13 @@ $.ajax ({
   },
   error: errorMessage()
 })
+
+// <--- javascipt --->
+
+$(document).ready(function() {
+  $('#search-button').on('click', function() {
+    name = $('#Song_name').val();
+    console.log(name);
+    
+  });
+});
