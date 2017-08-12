@@ -1,7 +1,14 @@
 $(document).ready(function() {
+  $.ajaxPrefilter(function(options) {
+    if (options.crossDomain && $.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });    //fixing origin header   https://codepen.io/evertras/pen/OjmVEB
+
+
 OA.initialize({
     api_key: "a41e1fd9a45dbfb7e9b95b580f9020b11f824093",
-});
+});     // openaura initialize
 
 console.log();
 
