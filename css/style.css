@@ -1,17 +1,13 @@
-.video-display {
-  margin: auto;
-}
 
 #search-bar, .searchTerm{
-  margin:auto;
+  margin: auto;
   text-align: center;
 }
 
 .title {
   font-family: 'Abril Fatface', cursive;
-  font-size:90px;
+  font-size:100px;
   text-align:center;
-  padding-bottom:0px;
 }
 
 .subtitle {
@@ -23,6 +19,29 @@
 .left-side-panel, .right-side-panel {
   border-color:red;
   border-size: 10px;
+}
+
+body{
+  background-color: #a8d0e6
+}
+
+#music-font-only{
+  color:#374785;
+}
+
+::-webkit-input-placeholder {
+  color:#374785;
+  font: italic;
+}
+
+ #youtube-logo
+    {height: 96px;
+      width: 96px;
+    }
+
+body {
+    padding: 40px 0px;   
+
 }
 
 body{
