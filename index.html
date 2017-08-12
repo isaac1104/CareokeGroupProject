@@ -25,13 +25,20 @@
     <form>
       <div class="row">
         <div class="input-field col s6 offset-s3" id="search-input">
-          <input placeholder="be sure to include both artist and song name, or else you'll get a stupid result" id="artist-song-name" type="text" class="searchTerm">
+
+          <input placeholder="be sure to include both artist and song name, or else you'll get a stupid result" id="artist-song-name" type="text" class="searchTerm" autocomplete="off">
+
         </div>
       </div>
     </form>
   </div>
 
 
+    <div class="col s1 offset-s6 center-text">
+            <button class="btn waves-effect waves-light" type="submit" name="action" id="search-button">
+                Submit
+            </button>
+        </div>
 <div class="video-display">
 </div>
 
