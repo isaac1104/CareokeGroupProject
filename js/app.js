@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("hi");
+  $(".artist-info-display").hide();
 
   $.ajaxPrefilter(function(options) {
     if (options.crossDomain && $.support.cors) {
@@ -95,6 +95,7 @@ function errorMsg() {
          error: errorMessage()
        }); //end of first ajax call
        $('.artist-info-display').text("");
+       $(".artist-info-display").show();
   });
 
 });
