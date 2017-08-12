@@ -1,38 +1,42 @@
-.title {
+#search-bar, .searchTerm{
+  margin: auto;
+  text-align: center;
+}
 
-	font-size:100px;
+.title {
+  font-family: 'Abril Fatface', cursive;
+  font-size:100px;
+  text-align:center;
 }
 
 .subtitle {
-	font-size:25px;
+  font-size:25px;
+  font-style: italic;
+  text-align:center;
 }
 
 .left-side-panel, .right-side-panel {
-	border-color:red;
-	border-size: 10px;
+  border-color:red;
+  border-size: 10px;
 }
 
 body{
-	background-color: #a8d0e6
+  background-color: #a8d0e6
 }
 
-#music-font-only {
-	color:#374785;
+#music-font-only{
+  color:#374785;
 }
 
-h1, h5, div {
-	text-align: center;
-	   
-   }
-
- h1 {
- 	font-family: 'Abril Fatface', cursive;
- }
+::-webkit-input-placeholder {
+  color:#374785;
+  font: italic;
+}
 
  #youtube-logo
- 		{height: 96px;
- 			width: 96px;
- 		}
+    {height: 96px;
+      width: 96px;
+    }
 
 body {
     padding: 40px 0px;   
