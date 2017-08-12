@@ -45,7 +45,7 @@ function errorMsg() {
   $('.artist-info-display').text('loading artist info..');
 }
 
-  $('#search-button').on('click', function ajaxCall(event) {
+  $('#search-button').on('click', function(event) {
 
     //<--- youtube --->
     event.preventDefault();
