@@ -17,11 +17,11 @@ console.log();
 var name = "";
 
 function errorMessage() {
-  $('.artist-info-display').text('no artist found :(');
+  $('.artist-info-display').text('loading artist info..');
 }
 
 function noInfo() {
-  $('.artist-info-display').text('no info found :(');
+  $('.artist-info-display').text('loading artist info..');
 }
 
 function postInfo() {
@@ -29,7 +29,7 @@ function postInfo() {
 }
 
 function errorMsg() {
-  $('.artist-info-display').text('no artist found :(');
+  $('.artist-info-display').text('loading artist info..');
 }
 
 
