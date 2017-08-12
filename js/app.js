@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log("hi");
 
   $.ajaxPrefilter(function(options) {
     if (options.crossDomain && $.support.cors) {
@@ -9,6 +10,22 @@ $(document).ready(function() {
 OA.initialize({
     api_key: "a41e1fd9a45dbfb7e9b95b580f9020b11f824093",
 });     // openaura initialize
+
+
+// window.addEventListener("keydown", function(event) {
+//   switch (event.key) {
+//     case "Enter":
+//       ajaxCall();
+//         break;
+//
+//       break;
+//     default:
+//     return; //quit when this doesnt handle the event key
+//
+//   }
+//   event.preventDefault();
+// }, true);
+
 
 var name = "";
 
@@ -28,7 +45,7 @@ function errorMsg() {
   $('.artist-info-display').text('loading artist info..');
 }
 
-  $('#search-button').on('click', function(event) {
+  $('#search-button').on('click', function ajaxCall(event) {
 
     //<--- youtube --->
     event.preventDefault();
