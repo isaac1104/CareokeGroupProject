@@ -59,7 +59,7 @@ function errorMsg() {
       }).done(function(response) {
         console.log(response);
         $(".video-display").empty();
-        var iframe = $("<iframe allowfullscreen width='300' height='250'>");
+        var iframe = $("<iframe allowfullscreen width='640' height='360'>");
         var videoIds = response.items[0].id.videoId;
         iframe.attr("src", "https://www.youtube.com/embed/" + videoIds);
         $(".video-display").append(iframe);
