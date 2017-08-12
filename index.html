@@ -8,7 +8,7 @@
   <!--Roboto Google font-->
   <link href=“https://fonts.googleapis.com/css?family=Roboto” rel=“stylesheet”>
   <!-- Insert Materialize later -->
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
   <!-- custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,20 +16,27 @@
 
 <div class="jumbotron">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-  <h1 class="title"><span id="music-font-only">music</span>tionary</h1>
-  <p class="">your source for <span id="music-font-only">note</span>-able artists</p>
+  <div class="title"><span id="music-font-only">music</span>tionary</p>
+  <div class="subtitle">your source for <span id="music-font-only">note</span>-able artists</p>
+    </div>
     </div>
 
-<div class="wrap">
-   <div class="search">
-      <input type="text" class="searchTerm" placeholder="Artist Name - Song Name">
-      <button type="submit" class="searchButton" id="search-button">
-        <i class="fa fa-search"></i>
-     </button>
-   </div>
-</div>
-<div id="video"></div>
+<div id="search-bar">
+    <form>
+      <div class="row">
+        <div class="input-field col s6 offset-s3" id="search-input">
+          <input placeholder="be sure to include both artist and song name, or else you'll get a stupid result" id="artist-song-name" type="text" class="searchTerm" autocomplete="off">
+        </div>
+      </div>
+    </form>
+  </div>
 
+    <div class="col s1 offset-s6 center-text">
+            <button class="btn waves-effect waves-light" type="submit" name="action" id="search-button">
+                Submit
+            </button>
+        </div>
+    
 
 <div class="video-display">
 </div>
