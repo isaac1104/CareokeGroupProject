@@ -1,68 +1,60 @@
-
-#search-bar, .searchTerm{
+#search-bar, .searchTerm {
   margin: auto;
   text-align: center;
 }
 
 .title {
   font-family: 'Abril Fatface', cursive;
-  font-size:100px;
-  text-align:center;
+  font-size: 100px;
+  text-align: center;
 }
 
 .subtitle {
-  font-size:25px;
+  font-size: 25px;
   font-style: italic;
-  text-align:center;
+  text-align: center;
 }
 
 .left-side-panel, .right-side-panel {
-  border-color:red;
+  border-color: red;
   border-size: 10px;
 }
 
-body{
-  background-color: #a8d0e6
+body {
+  background-color: #a8d0e6;
+  padding: 40px 0px;
 }
 
-#music-font-only{
-  color:#374785;
+#music-font-only {
+  color: #374785;
 }
 
 ::-webkit-input-placeholder {
-  color:#374785;
+  color: #374785;
   font: italic;
 }
 
- #youtube-logo
-    {height: 96px;
-      width: 96px;
-    }
-
-body {
-    padding: 40px 0px;   
-
+#youtube-logo {
+  height: 96px;
+  width: 96px;
 }
 
-body{
-  background-color: #a8d0e6
+.video-display, .center-text {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
-#music-font-only{
-  color:#374785;
+.video-display {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-::-webkit-input-placeholder {
-  color:#374785;
-  font: italic;
+.artist-info-display {
+  max-width: 500px;
+  max-height: 400px;
+  overflow: scroll;
+  margin: auto;
+  border: black solid 2px;
 }
-
- #youtube-logo
-    {height: 96px;
-      width: 96px;
-    }
-
-body {
-    padding: 40px 0px;   
-}
-
