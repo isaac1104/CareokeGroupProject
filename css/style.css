@@ -29,6 +29,18 @@ body {
   color: #374785;
 }
 
+.music {
+  opacity: 0.8;
+  animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+  to {
+    opacity: 0.5;
+    color: red;
+  }
+}
+
 ::-webkit-input-placeholder {
   color: #374785;
   font: italic;
@@ -52,9 +64,16 @@ body {
 }
 
 .artist-info-display {
-  max-width: 500px;
+  max-width: 640px;
   max-height: 400px;
   overflow: scroll;
   margin: auto;
-  border: black solid 2px;
+  border: #dddddd solid 6px;
+  border-radius: 2%;
+  padding: 10px 20px 20px 20px;
+}
+
+iframe {
+  border: #dddddd solid 6px;
+  border-radius: 2%;
 }
