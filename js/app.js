@@ -1,6 +1,9 @@
 $(document).ready(function() {
+  $(".video-header").hide();
   $(".video-display").hide();
+  $(".artist-info-header").hide();
   $(".artist-info-display").hide();
+  $("#entireHistory").hide();
 
   $.ajaxPrefilter(function(options) {
     if (options.crossDomain && $.support.cors) {
@@ -26,6 +29,39 @@ OA.initialize({
 //   event.preventDefault();
 // }, true);
 
+//firebase - tentative (corina/syed)
+
+var config = {
+    apiKey: "AIzaSyCwswvzXU5yMWY5dfKWEDWSfqp25oUg4gU",
+    authDomain: "musictionary-ab2fe.firebaseapp.com",
+    databaseURL: "https://musictionary-ab2fe.firebaseio.com",
+    projectId: "musictionary-ab2fe",
+    storageBucket: "",
+    messagingSenderId: "318207697163"
+  };
+firebase.initializeApp(config);
+
+var historyRef = firebase.database();
+
+$("#search-button").on("click",function(event) {
+  event.preventDefault();
+
+var userInput = $(".searchTerm").val().trim();
+console.log(userInput);
+historyRef.ref().push({
+
+  userInput: userInput
+
+});
+})
+historyRef.ref().on("child_added", function(childSnapshot) {
+  $("#song-table").append("<p>" + childSnapshot.val().userInput + "</p>");
+
+  console.log(childSnapshot.val().userinput);
+});
+
+
+//end of firebase
 
 var name = "";
 
@@ -98,8 +134,11 @@ function errorMsg() {
         error: errorMsg
       }); //end of first ajax call
       $('.artist-info-display').text("");
+      $(".video-header").fadeIn();
+      $(".artist-info-header").fadeIn();
       $(".video-display").fadeIn();
       $(".artist-info-display").fadeIn();
+      $("#entireHistory").fadeIn();
     }
   });
 });
