@@ -55,7 +55,7 @@ historyRef.ref().push({
 });
 })
 historyRef.ref().on("child_added", function(childSnapshot) {
-  $("#song-table").append("<p>" + childSnapshot.val().userInput + "</p>");
+  $("#song-table").append("<li class='collection-item'>" + childSnapshot.val().userInput + "</li>");
 
   console.log(childSnapshot.val().userinput);
 });
