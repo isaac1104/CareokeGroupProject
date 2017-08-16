@@ -29,12 +29,12 @@
 }
 
 body {
-  background-color: #a8d0e6;
+  background-color: #EAE7DC;
   padding: 40px 0px;
 }
 
-#music-font-only {
-  color: #374785;
+#note-font-only {
+  color: #e85a4f;
 }
 
 .music, #subheader1, #subheader2, #searchHeader1, #searchHeader2 {
@@ -95,3 +95,6 @@ iframe {
   width: -50%;
 }
 
+.side-nav {
+  background-color: #d8c3a5;
+}

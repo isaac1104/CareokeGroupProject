@@ -19,7 +19,7 @@
   <div class="jumbotron">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <div class="title"><span id="music-font-only" class="music">music</span>tionary<img class="resize" src="images/musicicon.jpg">
-      <div class="subtitle">your source for <span id="music-font-only">note<sup></span>-able artists
+      <div class="subtitle">your source for <span id="note-font-only">note<sup></span>-able artists
       </div>
     </div>
   </div>
@@ -39,28 +39,22 @@
 
   <p class="video-header" id="subheader1">press play</p>
   <div class="video-display"></div>
-   
+
   <p class="artist-info-header" id="subheader2">learn more</p>
   <div class="artist-info-display z-depth-3"> </div>
 
-<!--Tentative Firebase Call for User History-->
-<div id="entireHistory">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title" id="searchHeader1"><strong>your search history</strong></h3>
-  <div class="panel-body">
-    <table class="table table-hover" id="song-table">
-      <thead>
-      </thead>
-      <tbody>
-      <tr>
-      </tr>
-      </tbody>
-    </table>
+  <!--Tentative Firebase Call for User History-->
+  <div class="side-nav fixed" id="entireHistory">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title" id="searchHeader1"><strong>your search history</strong></h3>
+        <div class="panel-body">
+          <ul id="song-table">
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
- </div>  
- </div>
- </div>
 
   <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
