@@ -1,3 +1,11 @@
+#subheader1, #subheader2, #searchHeader1, #searchHeader2 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 40px;
+  text-align: center;
+  color: #374385;
+  font-style:italic;
+}
+
 #search-bar, .searchTerm {
   margin: auto;
   text-align: center;
@@ -29,9 +37,9 @@ body {
   color: #374785;
 }
 
-.music {
+.music, #subheader1, #subheader2, #searchHeader1, #searchHeader2 {
   opacity: 0.8;
-  animation: flicker 1s infinite;
+  animation: flicker 3s infinite;
 }
 
 @keyframes flicker {
@@ -77,3 +85,13 @@ iframe {
   border: #dddddd solid 6px;
   border-radius: 2%;
 }
+
+#entireHistory {
+  text-align: center;
+}
+
+.resize {
+  height: -50%;
+  width: -50%;
+}
+
