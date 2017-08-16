@@ -29,9 +29,6 @@ OA.initialize({
 
 var name = "";
 
-function errorMessage() {
-  $('.artist-info-display').text('loading artist info..');
-}
 
 function noInfo() {
   $('.artist-info-display').text('loading artist info..');
@@ -42,7 +39,7 @@ function postInfo() {
 }
 
 function errorMsg() {
-  $('.artist-info-display').text('loading artist info..');
+  $('.artist-info-display').html('<p style="text-align: center; color: red; font: bold;">-no artist found-</p>');
 }
 
   $('#search-button').on('click', function(event) {
@@ -83,15 +80,20 @@ function errorMsg() {
             url: "http://api.openaura.com/v1/info/artists/" + artistID + "?limit=10&id_type=oa:artist_id&api_key=a41e1fd9a45dbfb7e9b95b580f9020b11f824093",
             success: function(response) {
               console.log(response);
-              var artistBio = response.bio.media[0].data.text;
-              console.log("Artist Bio is as follows:  " + artistBio);
-              $('.artist-info-display').text(artistBio);
-              $('.searchTerm').val('').text('');
+              if (response.bio) {
+                var artistBio = response.bio.media[0].data.text;
+                console.log("Artist Bio is as follows:  " + artistBio);
+                $('.artist-info-display').html(artistBio);
+                $('.searchTerm').val('').text('');
+              } else {
+                errorMsg();
+              }
+
             },
-            error: errorMsg()
+            error: errorMsg
           });
         },
-        error: errorMessage()
+        error: errorMsg
       }); //end of first ajax call
       $('.artist-info-display').text("");
       $(".video-display").fadeIn();
