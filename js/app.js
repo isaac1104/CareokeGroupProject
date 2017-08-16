@@ -81,6 +81,7 @@ function errorMsg() {
             success: function(response) {
               console.log(response);
               if (response.bio) {
+                var name = response.name;
                 var artistBio = response.bio.media[0].data.text;
                 console.log("Artist Bio is as follows:  " + artistBio);
                 $('.artist-info-display').html(artistBio);
