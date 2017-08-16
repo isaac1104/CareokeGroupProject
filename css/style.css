@@ -98,3 +98,13 @@ iframe {
 .side-nav {
   background-color: #d8c3a5;
 }
+
+.side-nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton {
+  margin-left: 10px;
+}
