@@ -3,80 +3,77 @@ $(document).ready(function() {
   $(".video-display").hide();
   $(".artist-info-header").hide();
   $(".artist-info-display").hide();
-  $("#entireHistory").hide();
 
   $.ajaxPrefilter(function(options) {
     if (options.crossDomain && $.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
-  });    //fixing origin header   https://codepen.io/evertras/pen/OjmVEB
+  }); //fixing origin header   https://codepen.io/evertras/pen/OjmVEB
 
-OA.initialize({
+  OA.initialize({
     api_key: "a41e1fd9a45dbfb7e9b95b580f9020b11f824093",
-});     // openaura initialize
+  }); // openaura initialize
 
-// window.addEventListener("keydown", function(event) {
-//   switch (event.key) {
-//     case "Enter":
-//       ajaxCall();
-//         break;
-//
-//       break;
-//     default:
-//     return; //quit when this doesnt handle the event key
-//
-//   }
-//   event.preventDefault();
-// }, true);
+  //firebase - tentative (corina/syed)
 
-//firebase - tentative (corina/syed)
-
-var config = {
-    apiKey: "AIzaSyCwswvzXU5yMWY5dfKWEDWSfqp25oUg4gU",
-    authDomain: "musictionary-ab2fe.firebaseapp.com",
-    databaseURL: "https://musictionary-ab2fe.firebaseio.com",
-    projectId: "musictionary-ab2fe",
+  var config = {
+    apiKey: "AIzaSyAC0qT-ccvYssVoBqu31psUOcPdgP5c2nk",
+    authDomain: "musictionary-database.firebaseapp.com",
+    databaseURL: "https://musictionary-database.firebaseio.com",
+    projectId: "musictionary-database",
     storageBucket: "",
-    messagingSenderId: "318207697163"
+    messagingSenderId: "897267863516"
   };
-firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
-var historyRef = firebase.database();
+  var historyRef = firebase.database();
 
-$("#search-button").on("click",function(event) {
-  event.preventDefault();
+  $("#search-button").on("click", function(event) {
+    event.preventDefault();
 
-var userInput = $(".searchTerm").val().trim();
-console.log(userInput);
-historyRef.ref().push({
+    var userInput = $(".searchTerm").val().trim();
+    console.log(userInput);
+    historyRef.ref().push({
 
-  userInput: userInput
+      userInput: userInput
 
-});
-})
-historyRef.ref().on("child_added", function(childSnapshot) {
-  $("#song-table").append("<li class='collection-item'>" + childSnapshot.val().userInput + "</li>");
+    });
+  });
+  historyRef.ref().on("child_added", function(childSnapshot) {
+    var childKey = childSnapshot.key;
+    var newDiv = $("<div class='side-nav-items'>");
+    newDiv.append("<li class='collection-item'>" + childSnapshot.val().userInput + "</li>");
+    newDiv.append("<button class='deleteButton' data-key=" + childKey + ">" + "X" + "</button>");
+    $("#song-table").append(newDiv);
 
-  console.log(childSnapshot.val().userinput);
-});
+    console.log(childSnapshot.val().userinput);
+
+  }, function(errorObject) {
+    console.log(errorObject);
+  });
+
+  $(document).on("click", ".deleteButton", function() {
+    $(this).closest("div").remove();
+    var key = $(this).attr("data-key");
+    historyRef.ref(key).remove();
+  });
+
+  //end of firebase
+
+  var name = "";
 
 
-//end of firebase
+  function noInfo() {
+    $('.artist-info-display').text('loading artist info..');
+  }
 
-var name = "";
+  function postInfo() {
+    console.log("paste the info on page2");
+  }
 
-
-function noInfo() {
-  $('.artist-info-display').text('loading artist info..');
-}
-
-function postInfo() {
-  console.log("paste the info on page2");
-}
-
-function errorMsg() {
-  $('.artist-info-display').html('<p style="text-align: center; color: red; font: bold;">-no artist found-</p>');
-}
+  function errorMsg() {
+    $('.artist-info-display').html('<p style="text-align: center; color: red; font: bold;">-no artist found-</p>');
+  }
 
   $('#search-button').on('click', function(event) {
 
@@ -100,7 +97,7 @@ function errorMsg() {
       });
       //<--- openaura --->
       console.log(name);
-      $.ajax ({
+      $.ajax({
         method: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
