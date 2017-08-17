@@ -2,7 +2,7 @@
   font-family: 'Abril Fatface', cursive;
   font-size: 40px;
   text-align: center;
-  color: #374385;
+  font-color: #ffcdd2;
   font-style:italic;
 }
 
@@ -39,7 +39,7 @@ body {
 
 .music, #subheader1, #subheader2, #searchHeader1, #searchHeader2 {
   opacity: 0.8;
-  animation: flicker 3s infinite;
+  animation: flicker 2s infinite;
 }
 
 @keyframes flicker {
@@ -50,7 +50,7 @@ body {
 }
 
 ::-webkit-input-placeholder {
-  color: #374785;
+  color: black;
   font: italic;
 }
 
