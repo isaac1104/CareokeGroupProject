@@ -73,8 +73,8 @@ $(document).ready(function() {
   }
 
 //Recall video from the search history list//
-  $(document).on("click", ".collection-item", function() {
-    var keyword = $(this).attr("data-search");
+  $(document).on("click", ".collection-item", function(event) {
+    var keyword = event.currentTarget.innerText;
       var apiKey = "AIzaSyDnvAQCVMikrY0doIuuPeM-FkI5Bbf8ROo";
       $.ajax({
         url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoSyndicated=true&q=" + keyword + "&key=" + apiKey,
@@ -118,7 +118,7 @@ $(document).ready(function() {
               }
 
             },
-            error: errorMsg()
+            error: errorMsg
           });
         },
         error: errorMsg
@@ -135,7 +135,7 @@ $(document).ready(function() {
 
     //<--- youtube --->
     event.preventDefault();
-    var keyword = event.currentTarget.innerHtml;
+    var keyword = $(".searchTerm").val().trim();
     if (keyword !== "") {
       var apiKey = "AIzaSyDnvAQCVMikrY0doIuuPeM-FkI5Bbf8ROo";
       $(".searchTerm").val("");
