@@ -135,7 +135,7 @@ $(document).ready(function() {
 
     //<--- youtube --->
     event.preventDefault();
-    var keyword = $(".searchTerm").val().trim();
+    var keyword = event.currentTarget.innerHtml;
     if (keyword !== "") {
       var apiKey = "AIzaSyDnvAQCVMikrY0doIuuPeM-FkI5Bbf8ROo";
       $(".searchTerm").val("");
