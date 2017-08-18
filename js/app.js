@@ -44,10 +44,10 @@ $(document).ready(function() {
     var keyword = $(".searchTerm").val().trim();
     var childKey = childSnapshot.key;
     var newDiv = $("<div class='side-nav-items'>");
-    var newLi = $("<li class='collection-item'>" + childSnapshot.val().userInput + "</li>");
+    var newLi = $("<li class='collection-item'>" + "<h6>" + childSnapshot.val().userInput + "</h6></li>");
     newLi.attr("data-search", keyword);
     newDiv.append(newLi);
-    newDiv.append("<button class='deleteButton' data-key=" + childKey + ">" + "X" + "</button>");
+    newDiv.append("<button class='deleteButton btn-floating btn-small waves-effect waves-light red' data-key=" + childKey + ">" + "X" + "</button>");
     $("#song-table").append(newDiv);
 
   }, function(errorObject) {
@@ -74,6 +74,7 @@ $(document).ready(function() {
 
 //Recall video from the search history list//
   $(document).on("click", ".collection-item", function(event) {
+    console.log(event);
     var keyword = event.currentTarget.innerText;
       var apiKey = "AIzaSyDnvAQCVMikrY0doIuuPeM-FkI5Bbf8ROo";
       $.ajax({
